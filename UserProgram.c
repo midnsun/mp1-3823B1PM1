@@ -126,7 +126,7 @@ int main(int args, const char* argv[]) {
         printf("Print it? y/n\n");
         scanf(" %c", &sorttype);
         if (sorttype == 'y') mprint(mas, size);
-        else if (sorttype == 'y') continue;
+        else if (sorttype == 'n') continue;
         else {
             printf("Wrong input\n");
             return 0;
