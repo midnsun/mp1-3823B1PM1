@@ -76,7 +76,7 @@ int mdelete(TYPE* m, size_t* size, TYPE x) {
             *size = *size - 1;
             return 0;
         }
-        _swap(&temp, &m[i - 1]);
+        if (i > 0) _swap(&temp, &m[i - 1]);
     }
     return -1;
 }
