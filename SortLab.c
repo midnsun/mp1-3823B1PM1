@@ -98,7 +98,7 @@ int check(TYPE* m, TYPE* exl, size_t size) {
 void foffset(uint8_t* mas, size_t size, size_t offset, uint64_t count[255 + 1]) {
     size_t i;
     uint64_t tmp;
-    memset(count, 0, (255 + 1) * 8);
+    mclear(count, 255 + 1);
     for (i = 0; i < size * sizeof(TYPE); i += sizeof(TYPE))
         count[mas[i + offset]]++;
     tmp = count[0];
@@ -136,7 +136,7 @@ void radix_sort_LSD(TYPE* mas, size_t size) {
             mas2[k++] = mas[i];
         }
 
-        for (i = 0; i < size; i++) mas[i] = mas2[i];
+        _copy(mas2, mas, 0, size);
     }
 
     free(mas2);
