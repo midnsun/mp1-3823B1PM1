@@ -162,17 +162,17 @@ void radix_sort_LSD_i(uint64_t* mas, size_t size) {
 
 void insertion(TYPE* m, size_t size) {
     size_t i, j;
-    for (i = 0; i < size - 1; i++)
-        for (j = i + 1; j > 0 && m[j - 1] > m[j]; j--)
+    for (i = 0; i < size; i++)
+        for (j = i; j > 0 && m[j - 1] > m[j]; j--)
             _swap(&m[j - 1], &m[j]);
 }
 
 void _shellsort(TYPE* m, size_t size, uint64_t* seq, size_t seqsize) {
     int s, i, j;
-    for (s = 0; s < seqsize && seq[s] > 0 && size / seq[s] > 0; s++) {
+    for (s = 0; s < seqsize && seq[s] > 0; s++) {
         for (i = seq[s]; i < size; i++)
-            for (j = i - seq[s]; j >= 0 && m[j + seq[s]] < m[j]; j -= seq[s])
-                _swap(&m[j], &m[j + seq[s]]);
+            for (j = i; j >= seq[s] && m[j - seq[s]] > m[j]; j -= seq[s])
+                _swap(&m[j - seq[s]], &m[j]);
     }
 }
 
