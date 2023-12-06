@@ -127,8 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="SortLab.cpp" />
+    <ClCompile Include="UserProgram.c" />
+    <ClCompile Include="SortLab.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SortLab.h" />
