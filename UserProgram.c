@@ -70,7 +70,7 @@ int main(int args, const char* argv[]) {
             time = clock() - time;
             break;
         case 's':
-            printf("What seqence do you want to use? 0 for size/2 seq, 1 for 2^i seq, 2 for 2^i*3^i seq, 3 for emperic seq (size from 2000 to 4000 only)\n");
+            printf("What seqence do you want to use? 0 for size/2 seq, 1 for 2^i seq, 2 for 2^i*3^i seq, 3 for emperic seq (size up to 4000 only)\n");
             scanf(" %c", &sorttype);
             if (sorttype == '0') {
                 seqHalfSize(seq, &seqsize, size);
