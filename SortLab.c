@@ -39,7 +39,7 @@ void _copy(TYPE* src, TYPE* dst, size_t first, size_t last) {
 void fillm(float* m, size_t size, unsigned int seed, float left, float right) {
     size_t i;
     srand(seed);
-    for (i = 0; i < size; i++) m[i] = left + ((double)rand() / RAND_MAX)*(right - left);
+    for (i = 0; i < size; i++) m[i] = left + ((float)rand() / RAND_MAX)*(right - left);
 }
 
 void _reverse(uint64_t* m, size_t size) {
